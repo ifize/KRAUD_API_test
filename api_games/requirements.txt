@@ -9,3 +9,4 @@ pytz==2023.2
 sqlparse==0.4.3
 tzdata==2023.2
 gunicorn==20.1.0
+python-dotenv==0.19.2

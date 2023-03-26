@@ -41,7 +41,13 @@ pip install -r requirements.txt
 ```
 3. Создайте файл .env в корне проекта со следующим содержимым (замените значения на свои):
 ```makefile
-DJANGO_SECRET_KEY=your_secret_key
+DJANGO_SECRET_KEY=<>
+DJANGO_DB_ENGINE=<>
+DJANGO_DB_NAME=<>
+DJANGO_DB_USER=
+DJANGO_DB_PASSWORD=<>
+DJANGO_DB_HOST=<>
+DJANGO_DB_PORT=<>
 ```
 4. Запустите сервер разработки Django:
 

@@ -54,12 +54,12 @@ WSGI_APPLICATION = 'api_games.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'FnlWffCHgW70QoJKe712',
-        'HOST': 'containers-us-west-204.railway.app',
-        'PORT': '5638',
+        'ENGINE': os.getenv('DJANGO_DB_ENGINE'),
+        'NAME': os.getenv('DJANGO_DB_NAME'),
+        'USER': os.getenv('DJANGO_DB_USER'),
+        'PASSWORD': os.getenv('DJANGO_DB_PASSWORD'),
+        'HOST': os.getenv('DJANGO_DB_HOST'),
+        'PORT': os.getenv('DJANGO_DB_PORT'),
     }
 }
 
