@@ -1,0 +1,5 @@
+# Используйте официальный образ Nginx
+FROM nginx:latest
+
+# Скопируйте файл конфигурации Nginx
+COPY nginx.conf /etc/nginx/nginx.conf
