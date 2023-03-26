@@ -1,13 +1,20 @@
 from django.db import models
 
+
 class Player(models.Model):
     name = models.CharField(max_length=100)
     age = models.IntegerField()
-    games = models.ManyToManyField('OnlineGame', through='Statistic', related_name='players')
+    # Many-to-many relationship with OnlineGame through Statistic
+    games = models.ManyToManyField(
+        'OnlineGame',
+        through='Statistic',
+        related_name='players'
+        )
 
     class Meta:
         verbose_name = 'Игрок'
         verbose_name_plural = 'Игроки'
+
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
@@ -17,14 +24,17 @@ class Category(models.Model):
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
 
+
 class OnlineGame(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
+    # Many-to-many relationship with Category
     categories = models.ManyToManyField(Category, related_name='online_games')
 
     class Meta:
         verbose_name = 'Онлайн игра'
         verbose_name_plural = 'Онлайн игры'
+
 
 class Statistic(models.Model):
     player = models.ForeignKey(Player, on_delete=models.CASCADE)
